@@ -75,4 +75,13 @@ class AdvertisementController extends Controller
     {
         return KeywordsResource::collection(Keyword::all());
     }
+
+    public function img(Advertisement $advertisement)
+    {
+        if ($advertisement->img_path) {
+            $asset = asset($advertisement->img_path);
+            return '<img src="' . $asset . '">';
+        }
+        return "brak zdjęcia";
+    }
 }

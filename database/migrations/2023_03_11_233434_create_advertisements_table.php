@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('author_id')->nullable()->references('id')->on('users')->onDelete('set null');
             $table->unsignedBigInteger('address_id')->nullable()->references('id')->on('addresses')->onDelete('set null');
+            $table->string('img_path')->nullable();
             $table->string('title');
             $table->longText('description');
             $table->integer('price');

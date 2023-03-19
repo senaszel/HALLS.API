@@ -27,4 +27,5 @@ Route::controller(AdvertisementController::class)
         Route::get('keywords', 'keywords')->name('keywords');
         Route::get('', 'index')->name('index');
         Route::get('{advertisement}', 'show')->name('show');
+        Route::get('{advertisement}/img', 'img')->name('img');
     });

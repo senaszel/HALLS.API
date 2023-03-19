@@ -19,6 +19,7 @@ class AdvertisementFactory extends Factory
     public function definition(): array
     {
         return [
+            'img_path' => null,
             'author_id' => null,
             'address_id' => null,
             'title' => fake()->sentence(),
