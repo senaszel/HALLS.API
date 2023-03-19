@@ -15,6 +15,7 @@ class AdvertisementResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            "img_path" => $this->resource->img_path,
             "title" => $this->resource->title,
             "description" => $this->resource->description,
             "keywords" => $this->resource->assosiatedKeywords(),
