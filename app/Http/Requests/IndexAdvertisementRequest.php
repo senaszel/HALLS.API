@@ -30,7 +30,7 @@ class IndexAdvertisementRequest extends FormRequest
 
     private function baseQuery(): Builder
     {
-        return Advertisement::with('keywords');
+        return Advertisement::with(['keywords', 'address']);
     }
 
     public function filter(): Builder

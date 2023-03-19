@@ -7,10 +7,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Collection;
 
 class Advertisement extends Model
 {
     use HasFactory;
+
+    public function rating(): float
+    {
+        return round($this->rates->avg('rate'), true);
+    }
+
+    public function rates(): HasMany
+    {
+        return $this->hasMany(Rate::class);
+    }
+
+    public function assosiatedKeywords(): Collection
+    {
+        return $this->keywords->pluck('name');
+    }
 
     public function keywords(): BelongsToMany
     {

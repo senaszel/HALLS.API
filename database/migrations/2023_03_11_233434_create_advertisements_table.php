@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('address_id')->nullable()->references('id')->on('addresses')->onDelete('set null');
             $table->string('title');
             $table->longText('description');
+            $table->integer('price');
             $table->timestamps();
         });
     }
