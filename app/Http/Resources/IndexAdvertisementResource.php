@@ -21,7 +21,7 @@ class IndexAdvertisementResource extends JsonResource
             "description" => $this->resource->description,
             "keywords" => KeywordsResource::collection($this->resource->keywords),
             "rating" => $this->resource->rating(),
-            "price" => $this->resource->price,
+            "prices" => PriceResource::collection($this->resource->prices),
             "address" => new AddressResource($this->resource->address)
         ];
     }

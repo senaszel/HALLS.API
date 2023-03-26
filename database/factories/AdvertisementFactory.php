@@ -24,7 +24,6 @@ class AdvertisementFactory extends Factory
             'address_id' => null,
             'title' => fake()->sentence(),
             'description' => fake()->text(1500),
-            'price' => (fake()->numberBetween(1, 5) * 100)
         ];
     }
 

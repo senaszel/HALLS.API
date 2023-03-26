@@ -34,6 +34,11 @@ class Advertisement extends Model
         return $this->belongsToMany(Keyword::class);
     }
 
+    public function prices(): HasMany
+    {
+        return $this->hasMany(Price::class);
+    }
+
     public function details(): HasMany
     {
         return $this->hasMany(Detail::class);
