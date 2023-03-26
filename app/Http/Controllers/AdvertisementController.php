@@ -14,7 +14,10 @@ use App\Models\Keyword;
 class AdvertisementController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\Get(
+     *     path="/api/advertisements",
+     *     @OA\Response(response="200", description="Display a listing of advertisements.")
+     * )
      */
     public function index(IndexAdvertisementRequest $request)
     {

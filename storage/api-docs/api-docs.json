@@ -1,0 +1,19 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Halls API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/advertisements": {
+            "get": {
+                "operationId": "bc988b5b7a417987609c7aa40979e930",
+                "responses": {
+                    "200": {
+                        "description": "Display a listing of advertisements."
+                    }
+                }
+            }
+        }
+    }
+}
