@@ -7,10 +7,57 @@
     "paths": {
         "/api/advertisements": {
             "get": {
-                "operationId": "bc988b5b7a417987609c7aa40979e930",
+                "operationId": "AdvertisementController@index",
                 "responses": {
                     "200": {
                         "description": "Display a listing of advertisements."
+                    }
+                }
+            }
+        },
+        "/api/advertisements/{advertisement}": {
+            "get": {
+                "operationId": "AdvertisementController@show",
+                "parameters": [
+                    {
+                        "name": "advertisement",
+                        "in": "path",
+                        "description": "ID of advertisement to retrieve",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Display the specified advertisement.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "data": {}
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Advertisement not found.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "string",
+                                            "example": "Advertisement not found."
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }

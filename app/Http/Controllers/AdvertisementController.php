@@ -16,6 +16,7 @@ class AdvertisementController extends Controller
     /**
      * @OA\Get(
      *     path="/api/advertisements",
+     *     operationId="AdvertisementController@index",
      *     @OA\Response(response="200", description="Display a listing of advertisements.")
      * )
      */
@@ -43,7 +44,39 @@ class AdvertisementController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * @OA\Get(
+     *     path="/api/advertisements/{advertisement}",
+     *     operationId="AdvertisementController@show",
+     *     @OA\Parameter(
+     *         name="advertisement",
+     *         description="ID of advertisement to retrieve",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Display the specified advertisement.",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 property="data"
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="404",
+     *         description="Advertisement not found.",
+     *         @OA\JsonContent(
+     *             @OA\Property(
+     *                 property="error",
+     *                 type="string",
+     *                 example="Advertisement not found."
+     *             )
+     *         )
+     *     )
+     * )
      */
     public function show(Advertisement $advertisement)
     {
