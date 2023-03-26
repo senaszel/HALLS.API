@@ -19,7 +19,7 @@ class IndexAdvertisementResource extends JsonResource
             "img_path" => $this->resource->img_path,
             "title" => $this->resource->title,
             "description" => $this->resource->description,
-            "keywords" => $this->resource->assosiatedKeywords(),
+            "keywords" => KeywordsResource::collection($this->resource->keywords),
             "rating" => $this->resource->rating(),
             "price" => $this->resource->price,
             "address" => new AddressResource($this->resource->address)
