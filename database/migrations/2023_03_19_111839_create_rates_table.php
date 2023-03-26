@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('advertisement_id');
             $table->integer('rate');
+            $table->text('comment');
             $table->timestamps();
 
             $table->foreign('advertisement_id')->references('id')->on('advertisements')->onDelete('cascade');

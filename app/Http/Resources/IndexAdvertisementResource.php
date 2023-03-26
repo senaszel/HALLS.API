@@ -22,7 +22,7 @@ class IndexAdvertisementResource extends JsonResource
             "keywords" => $this->resource->assosiatedKeywords(),
             "rating" => $this->resource->rating(),
             "price" => $this->resource->price,
-            "address" => new AddressResource($this->address)
+            "address" => new AddressResource($this->resource->address)
         ];
     }
 }

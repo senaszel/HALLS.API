@@ -16,7 +16,7 @@ class Advertisement extends Model
 
     public function rating(): float
     {
-        return round($this->rates->avg('rate'), true);
+        return round($this->rates->avg('rate'), 1);
     }
 
     public function rates(): HasMany
